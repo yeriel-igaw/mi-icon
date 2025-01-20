@@ -19,7 +19,7 @@ jobs:
         node-version: '16.x'
     - run: npm install -g yarn  # 최신 yarn 설치
     - run: yarn --version       # 설치된 버전 확인
-    - run: echo "Encoded FIGMA_FILE_URL: $(echo -n $FIGMA_FILE_URL | base64)"
+    - run: echo "FIGMA_FILE_URL is set to $FIGMA_FILE_URL"
       env:
         FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
     - name: Figma Action
