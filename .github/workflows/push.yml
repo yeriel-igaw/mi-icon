@@ -17,7 +17,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16.x'
-    - run: yarn install
+    - run: npm install -g yarn  # 최신 yarn 설치
+    - run: yarn --version       # 설치된 버전 확인
     - name: Figma Action
       uses: primer/figma-action@v1.0.0-alpha.2
       with:
