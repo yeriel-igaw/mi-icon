@@ -26,7 +26,8 @@ jobs:
         env:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-      - run: yarn add prettier-eslint --dev
+      - run: yarn config set strict-ssl false
+      - run: yarn install --frozen-lockfile
       - run: yarn generate
       - run: yarn build:bundle
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
