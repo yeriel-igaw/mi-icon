@@ -12,7 +12,7 @@ jobs:
     name: figma icon automation
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
@@ -26,6 +26,7 @@ jobs:
         env:
           FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+      - run: yarn install --frozen-lockfile
       - run: yarn generate
       - run: yarn build:bundle
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
