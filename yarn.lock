@@ -3414,6 +3414,16 @@ merge2@^1.2.3, merge2@^1.3.0:
   resolved "https://registry.npm.taobao.org/merge2/download/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha1-Q2iJL4hekHRVpv19xVwMnUBJkK4=
 
+mi-icon@^0.3.17:
+  version "0.3.17"
+  resolved "https://registry.yarnpkg.com/mi-icon/-/mi-icon-0.3.17.tgz#3998d78428a4a26cd6a96512c00ba8f151e126e2"
+  integrity sha512-yuZstZh+vKKacnON65SjCFLACkIM523ZNMAMQ2EYETEjXjnkP9WwB5hjXSjnvxLyX3XJQRhpLi1fK24p4rdZYw==
+  dependencies:
+    normalize.css "^8.0.1"
+    react "^16.13.1"
+    react-dom "^16.13.1"
+    styled-components "^5.1.1"
+
 micromatch@^3.1.10, micromatch@^3.1.4:
   version "3.1.10"
   resolved "https://registry.npm.taobao.org/micromatch/download/micromatch-3.1.10.tgz?cache=0&sync_timestamp=1589682762554&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmicromatch%2Fdownload%2Fmicromatch-3.1.10.tgz#70859bc95c9840952f359a068a3fc49f9ecfac23"
