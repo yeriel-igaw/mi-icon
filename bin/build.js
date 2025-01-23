@@ -8,6 +8,7 @@ const { parseName } = require('./utils')
 const defaultStyle = process.env.npm_package_config_style || 'stroke'
 const { getAttrs, getElementCode } = require('./template')
 const icons = require('../src/data.json')
+const {elem} = require("svgo/lib/svgo/jsAPI");
 
 const rootDir = path.join(__dirname, '..')
 
@@ -60,14 +61,13 @@ const attrsToString = (attrs, style) => {
 
 // generate icon code separately
 const generateIconCode = async ({name}) => {
-  const names = parseName(name, defaultStyle)
-  console.log(names)
+  const names = parseName(name, defaultStyle);
   const location = path.join(rootDir, 'src/svg', `${names.name}.svg`)
   const destination = path.join(rootDir, 'src/icons', `${names.name}.js`)
-  const code = fs.readFileSync(location)
-  const svgCode = await processSvg(code)
+  const code = fs.readFileSync(location);
+  const svgCode = await processSvg(code);
   const ComponentName = names.componentName
-  const element = getElementCode(ComponentName, attrsToString(getAttrs(names.style), names.style), svgCode)
+  const element = getElementCode(ComponentName, attrsToString(getAttrs(names.style), names.style), svgCode);
   const component = format({
     text: element,
     eslintConfig: {

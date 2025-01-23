@@ -20,7 +20,7 @@ function optimize(svg) {
     plugins: [
       { convertShapeToPath: false },
       { mergePaths: false },
-      { removeAttrs: { attrs: '(fill|stroke.*)' } },
+      { removeAttrs: { attrs: '(stroke.*)' } },
       { removeTitle: true },
     ],
   });
