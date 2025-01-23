@@ -52,7 +52,7 @@ async function processSvg(svg) {
         .then(svg => svg.replace(/;/g, ''))
         .then(removeSVGElement)
         .then(svg => svg.replace(/([a-z]+)-([a-z]+)=/g, (_, a, b) => `${a}${CamelCase(b)}=`))
-        .then(svg => svg.replace(/href=/g, 'xlink:href='));
+        .then(svg => svg.replace(/href=/g, 'xlinkHref='));
 
     return optimized;
 }
