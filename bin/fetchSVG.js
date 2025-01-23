@@ -49,7 +49,6 @@ client.file(fileId)
         const {name, id} = c
         const {description = '', key} = data.components[c.id]
         const {width, height} = c.absoluteBoundingBox
-
         components[id] = {
           name,
           id,
@@ -65,7 +64,8 @@ client.file(fileId)
       }
     }
 
-    data.document.children.forEach(check)
+    data.document.children.forEach(check);
+
     if (Object.values(components).length === 0) {
       throw Error('No components found!')
     }

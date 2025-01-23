@@ -19,13 +19,7 @@ jobs:
           node-version: '16.x'
       - run: npm install -g yarn  # 최신 yarn 설치
       - run: yarn --version       # 설치된 버전 확인
-      - name: Figma Action
-        uses: primer/figma-action@v1.0.0-alpha.3
-        with:
-          args: "format=svg outputDir=./src/"
-        env:
-          FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+      - run : yarn fetch
       - run: yarn config set strict-ssl false
       - run: yarn install --frozen-lockfile
       - run: yarn generate
