@@ -7,7 +7,7 @@ const cheerio = require('cheerio')
  * @returns {string}
  */
 function CamelCase(str) {
-  return str.replace(/(^|-)([a-z])/g, (_, __, c) => c.toUpperCase())
+    return str.replace(/(^|-)([a-z])/g, (_, __, c) => c.toUpperCase())
 }
 
 /**
@@ -16,18 +16,18 @@ function CamelCase(str) {
  * @returns {Promise<string>}
  */
 function optimize(svg) {
-  const svgo = new Svgo({
-    plugins: [
-      { convertShapeToPath: false },
-      { mergePaths: false },
-      { removeAttrs: { attrs: '(stroke.*)' } },
-      { removeTitle: true },
-    ],
-  });
+    const svgo = new Svgo({
+        plugins: [
+            {convertShapeToPath: false},
+            {mergePaths: false},
+            {removeAttrs: {attrs: '(stroke.*)'}},
+            {removeTitle: true},
+        ],
+    });
 
-  return new Promise(resolve => {
-    svgo.optimize(svg).then(({ data }) => resolve(data));
-  });
+    return new Promise(resolve => {
+        svgo.optimize(svg).then(({data}) => resolve(data));
+    });
 }
 
 /**
@@ -36,8 +36,8 @@ function optimize(svg) {
  * @returns {string}
  */
 function removeSVGElement(svg) {
-  const $ = cheerio.load(svg);
-  return $('body').children().html();
+    const $ = cheerio.load(svg);
+    return $('body').children().html();
 }
 
 /**
@@ -46,13 +46,15 @@ function removeSVGElement(svg) {
  * @param {Promise<string>}
  */
 async function processSvg(svg) {
-  const optimized = await optimize(svg)
-    // remove semicolon inserted by prettier
-    // because prettier thinks it's formatting JSX not HTML
-    .then(svg => svg.replace(/;/g, ''))
-    .then(removeSVGElement)
-    .then(svg => svg.replace(/([a-z]+)-([a-z]+)=/g, (_, a, b) => `${a}${CamelCase(b)}=`))
-  return optimized;
+    const optimized = await optimize(svg)
+        // remove semicolon inserted by prettier
+        // because prettier thinks it's formatting JSX not HTML
+        .then(svg => svg.replace(/;/g, ''))
+        .then(removeSVGElement)
+        .then(svg => svg.replace(/([a-z]+)-([a-z]+)=/g, (_, a, b) => `${a}${CamelCase(b)}=`))
+        .then(svg => svg.replace(/href=/g, 'xlink:href='));
+
+    return optimized;
 }
 
 module.exports = processSvg;
