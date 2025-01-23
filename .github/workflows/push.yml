@@ -21,7 +21,11 @@ jobs:
       - run: yarn --version       # 설치된 버전 확인
       - run: yarn config set strict-ssl false
       - run: yarn install --frozen-lockfile
-      - run: yarn fetch
+      - name: fetch Figma File
+        run: yarn fetch
+        env :
+          FIGMA_FILE_URL: ${{ secrets.FIGMA_FILE_URL }}
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
       - run: yarn generate
       - run: yarn build:bundle
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
