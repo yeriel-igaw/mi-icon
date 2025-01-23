@@ -48,7 +48,7 @@ const attrsToString = (attrs, style) => {
   console.log('style: ', style)
   return Object.keys(attrs).map((key) => {
     // should distinguish fill or stroke
-    if (key === 'width' || key === 'height' || key === style) {
+    if (key === 'width' || key === 'height'  || key === 'fill' || key === 'stroke' || key === style) {
       return key + '={' + attrs[key] + '}';
     }
     if (key === 'otherProps') {
