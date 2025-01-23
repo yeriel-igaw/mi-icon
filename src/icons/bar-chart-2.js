@@ -16,16 +16,19 @@ const BarChart2 = props => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M18 9a1 1 0 011 1v10a1 1 0 11-2 0V10a1 1 0 011-1z"
+        fill="#000"
       ></path>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M12 3a1 1 0 011 1v16a1 1 0 11-2 0V4a1 1 0 011-1z"
+        fill="#000"
       ></path>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M6 13a1 1 0 011 1v6a1 1 0 11-2 0v-6a1 1 0 011-1z"
+        fill="#000"
       ></path>
     </svg>
   );

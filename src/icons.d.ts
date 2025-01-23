@@ -57,3 +57,6 @@ export const Code: Icon;
 export const CloudLightning: Icon;
 export const CloudOff: Icon;
 export const CloudSnow: Icon;
+export const Ellipse1: Icon;
+export const Ellipse2: Icon;
+export const AppIconM: Icon;

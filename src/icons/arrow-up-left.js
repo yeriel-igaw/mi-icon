@@ -16,6 +16,7 @@ const ArrowUpLeft = props => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M7 6a1 1 0 00-1 1v10a1 1 0 102 0V9.34l8.293 8.367a1 1 0 001.414-1.414L9.487 8H17a1 1 0 100-2H7z"
+        fill="#000"
       ></path>
     </svg>
   );

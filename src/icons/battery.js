@@ -16,11 +16,13 @@ const Battery = props => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M3 7a1 1 0 00-1 1v8a1 1 0 001 1h14a1 1 0 001-1V8a1 1 0 00-1-1H3zM0 8a3 3 0 013-3h14a3 3 0 013 3v8a3 3 0 01-3 3H3a3 3 0 01-3-3V8z"
+        fill="#000"
       ></path>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M23 10a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1z"
+        fill="#000"
       ></path>
     </svg>
   );

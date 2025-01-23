@@ -48,3 +48,6 @@ export { default as Code } from './icons/code';
 export { default as CloudLightning } from './icons/cloud-lightning';
 export { default as CloudOff } from './icons/cloud-off';
 export { default as CloudSnow } from './icons/cloud-snow';
+export { default as Ellipse1 } from './icons/Ellipse 1';
+export { default as Ellipse2 } from './icons/Ellipse 2';
+export { default as AppIconM } from './icons/app icon_M';

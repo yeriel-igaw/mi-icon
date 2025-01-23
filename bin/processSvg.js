@@ -41,6 +41,16 @@ function removeSVGElement(svg) {
 }
 
 /**
+ * Fix base64 format.
+ * @param {string} svg - An SVG string.
+ * @returns {string}
+ */
+function fixBase64Uri(svg) {
+    return svg.replace('data:image/pngbase64', 'data:image/png;base64');
+}
+
+
+/**
  * Process SVG string.
  * @param {string} svg - An SVG string.
  * @param {Promise<string>}
@@ -52,8 +62,8 @@ async function processSvg(svg) {
         .then(svg => svg.replace(/;/g, ''))
         .then(removeSVGElement)
         .then(svg => svg.replace(/([a-z]+)-([a-z]+)=/g, (_, a, b) => `${a}${CamelCase(b)}=`))
-        .then(svg => svg.replace(/href=/g, 'xlinkHref='));
-
+        .then(svg => svg.replace(/href=/g, 'xlinkHref='))
+        .then(fixBase64Uri);
     return optimized;
 }
 

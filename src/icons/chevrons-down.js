@@ -16,11 +16,13 @@ const ChevronsDown = props => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M6.293 12.293a1 1 0 011.414 0L12 16.586l4.293-4.293a1 1 0 011.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414z"
+        fill="#000"
       ></path>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M6.293 5.293a1 1 0 011.414 0L12 9.586l4.293-4.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414z"
+        fill="#000"
       ></path>
     </svg>
   );
