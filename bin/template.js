@@ -1,9 +1,9 @@
-const getAttrs = (style) => {
+const getAttrs = (style,width,height) => {
   const baseAttrs = {
     xmlns: 'http://www.w3.org/2000/svg',
     width: 'size',
     height: 'size',
-    viewBox: '0 0 24 24',
+    viewBox: `0 0 ${width} ${height}`,
   }
   const fillAttrs = {
     fill: 'color',
@@ -23,7 +23,7 @@ const getAttrs = (style) => {
 const getElementCode = (ComponentName, attrs, svgCode) => `
   import React from 'react';
   import PropTypes from 'prop-types';
-
+  
   const ${ComponentName} = (props) => {
     const { color, size, ...otherProps } = props;
     return (
